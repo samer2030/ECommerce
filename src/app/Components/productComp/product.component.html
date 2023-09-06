@@ -1,3 +1,22 @@
 <!-- <link rel="stylesheet" href="../../../../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
 
-<h1 class="display-4">{{storeName}}</h1>
+<select>
+    <option value="default">----</option>
+    <option *ngFor="let cat of Categories" [value]="cat">
+        {{cat.categeoryName}}
+    </option>
+</select>
+
+
+<div class="container-fluid row gap-3 justify-content-center">
+    <div class="card col-3" *ngFor="let item of Products" [ngClass]="{'bg-danger':item.Quantity==1}"
+        [ngStyle]="{'font-size': item.Quantity==1 ? '20px':'25px', 'font-weight': item.Quantity==1 ? 'bold':'light'}">
+        <img [src]="item.Img | defaultImgURL" class="img-fluid" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{item.Name}}</h5>
+            <p class="card-text">{{item.Price | currency :'L.E.'}}</p>
+            <a href="#" class="btn btn-primary" *ngIf="item.Quantity > 3">Add to cart</a>
+            <a href="#" class="btn btn-warning" *ngIf="item.Quantity <= 3">Last item in Stock Buy it now</a>
+        </div>
+    </div>
+</div>

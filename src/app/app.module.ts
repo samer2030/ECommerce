@@ -6,6 +6,8 @@ import { HeaderComponent } from './Components/headerComp/header.component';
 import { FooterComponent } from './Components/footerComp/footer.component';
 import { MainComponent } from './Components/mainComp/main.component';
 import { ProductComponent } from './Components/productComp/product.component';
+import { FormsModule } from '@angular/forms';
+import { DefaultImgURLPipe } from './Pipes/DefaultImgURL/default-img-url.pipe';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { ProductComponent } from './Components/productComp/product.component';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    ProductComponent
+    ProductComponent,
+    DefaultImgURLPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

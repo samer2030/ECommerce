@@ -9,16 +9,27 @@ import { IProduct } from 'src/app/Models/IProduct';
 })
 export class ProductComponent {
     title = "productComp";
-    storeName: string = 'Sam Store';
-    storeLogo: string = '';
-    clientName: string = '';
-    
     Categories: Array<ICategory> = [
         {
-            categeoryName: '',
+            categeoryName: 'Laptops',
             categoryID: 0,
-            discription: ''
-        }
+            discription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore accusamus quasi quidem incidunt. Consequatur consequuntur sit officiis odit aperiam nam?'
+        },
+        {
+            categeoryName: 'Phones',
+            categoryID: 1,
+            discription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore accusamus quasi quidem incidunt. Consequatur consequuntur sit officiis odit aperiam nam?'
+        },
+        {
+            categeoryName: 'Tablets',
+            categoryID: 2,
+            discription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore accusamus quasi quidem incidunt. Consequatur consequuntur sit officiis odit aperiam nam?'
+        },
+        {
+            categeoryName: 'PCs',
+            categoryID: 3,
+            discription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore accusamus quasi quidem incidunt. Consequatur consequuntur sit officiis odit aperiam nam?'
+        },
     ];
 
     Products: Array<IProduct> = [
@@ -28,14 +39,14 @@ export class ProductComponent {
             Price: 100000,
             Quantity: 3,
             categoryID: 1,
-            Img: "https://picsum.photos/200"
+            Img: ""
         },
         {
             ID: 2,
             Name: "Dell",
             Price: 2002020,
             Quantity: 2,
-            Img: "https://picsum.photos/200",
+            Img: "",
             categoryID: 2,
         },
         {

@@ -1,1 +1,11 @@
-<productComp></productComp>
+<!-- <link rel="stylesheet" href="../../../../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+<h3 class="display-3">{{clientName}}</h3>
+<input type="text" [(ngModel)]='clientName'>
+<div class="d-flex">
+    <h1 class="display-1 w-100">{{storeName}} </h1>
+    <br>
+    <div class="">
+        <img class=" " src="../../../assets/imgs/logo.png" alt="" style="display: block; height: 100px;">
+    </div>
+</div>
+<productComp class="container-fluid d-flex flex-column justify-content-center align-items-center"></productComp>
