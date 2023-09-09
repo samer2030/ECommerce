@@ -1,13 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+import { AppRoutingModule } from './router/router.module';
+import { ProductService } from './Services/product.service';
+import { DefaultImgURLPipe } from './Pipes/DefaultImgURL/default-img-url.pipe';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/headerComp/header.component';
 import { FooterComponent } from './Components/footerComp/footer.component';
 import { MainComponent } from './Components/mainComp/main.component';
-import { ProductComponent } from './Components/productComp/product.component';
-import { FormsModule } from '@angular/forms';
-import { DefaultImgURLPipe } from './Pipes/DefaultImgURL/default-img-url.pipe';
+import { ProductListComponent } from './Components/product-list/product-list.component';
+import { NavBarCompComponent } from './Components/nav-bar-comp/nav-bar-comp.component';
+import { NotFoundComponent } from './Components/not-found-comp/not-found-comp.component';
+import { ProdDetailsComponent } from './Components/prod-details/prod-details.component';
+import { UserLayoutComponent } from './Components/user-layout/user-layout.component';
+import { ProductComponent } from './Components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +23,22 @@ import { DefaultImgURLPipe } from './Pipes/DefaultImgURL/default-img-url.pipe';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    ProductComponent,
-    DefaultImgURLPipe
+    ProductListComponent,
+    DefaultImgURLPipe,
+    NavBarCompComponent,
+    NotFoundComponent,
+    ProdDetailsComponent,
+    UserLayoutComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

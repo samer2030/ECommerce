@@ -1,0 +1,12 @@
+<a class="btn" [routerLink]="['/user/details',product.ID]">
+
+    <div [ngClass]="{'bg-danger':product.Quantity==1}" [ngStyle]="{'font-size': product.Quantity==1 ? '20px':'25px', 'font-weight': product.Quantity==1 ? 'bold':'light'}">
+        <img [src]="product.Img | defaultImgURL" class="img-fluid" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{product.Name}}</h5>
+            <p class="card-text">{{product.Price | currency :'L.E.'}}</p>
+            <a href="#" class="btn btn-primary" *ngIf="product.Quantity > 3">Add to cart</a>
+            <a href="#" class="btn btn-warning" *ngIf="product.Quantity <= 3">Last item in Stock Buy it now</a>
+        </div>
+    </div>
+</a>

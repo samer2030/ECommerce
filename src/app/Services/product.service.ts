@@ -1,38 +1,13 @@
-import { Component } from '@angular/core';
-import { ICategory } from 'src/app/Models/ICategory';
-import { IProduct } from 'src/app/Models/IProduct';
+import { Injectable } from '@angular/core';
+import { Product } from '../Models/Product';
+import { ICategory } from '../Models/ICategory';
 
-@Component({
-    selector: "productComp",
-    templateUrl: './product.component.html',
-    styleUrls: ['./product.component.css']
-})
-export class ProductComponent {
-    title = "productComp";
-    Categories: Array<ICategory> = [
-        {
-            categeoryName: 'Laptops',
-            categoryID: 0,
-            discription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore accusamus quasi quidem incidunt. Consequatur consequuntur sit officiis odit aperiam nam?'
-        },
-        {
-            categeoryName: 'Phones',
-            categoryID: 1,
-            discription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore accusamus quasi quidem incidunt. Consequatur consequuntur sit officiis odit aperiam nam?'
-        },
-        {
-            categeoryName: 'Tablets',
-            categoryID: 2,
-            discription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore accusamus quasi quidem incidunt. Consequatur consequuntur sit officiis odit aperiam nam?'
-        },
-        {
-            categeoryName: 'PCs',
-            categoryID: 3,
-            discription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore accusamus quasi quidem incidunt. Consequatur consequuntur sit officiis odit aperiam nam?'
-        },
-    ];
+@Injectable()
+export class ProductService {
 
-    Products: Array<IProduct> = [
+    constructor() { }
+
+    Products: Array<Product> = [
         {
             ID: 1,
             Name: "Lenvo thinpad X230",
@@ -122,4 +97,35 @@ export class ProductComponent {
             ID: 11
         }
     ]
+    Categories: Array<ICategory> = [
+        {
+            categeoryName: 'Laptops',
+            categoryID: 0,
+            discription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore accusamus quasi quidem incidunt. Consequatur consequuntur sit officiis odit aperiam nam?'
+        },
+        {
+            categeoryName: 'Phones',
+            categoryID: 1,
+            discription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore accusamus quasi quidem incidunt. Consequatur consequuntur sit officiis odit aperiam nam?'
+        },
+        {
+            categeoryName: 'Tablets',
+            categoryID: 2,
+            discription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore accusamus quasi quidem incidunt. Consequatur consequuntur sit officiis odit aperiam nam?'
+        },
+        {
+            categeoryName: 'PCs',
+            categoryID: 3,
+            discription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore accusamus quasi quidem incidunt. Consequatur consequuntur sit officiis odit aperiam nam?'
+        },
+    ];
+
+    filterByCategoryID(id: number): Product[] {
+        if (id == 0) return this.Products;
+        else return this.Products.filter(p => p.categoryID == id);
+    }
+
+    getProductByID(id: number) :Product | undefined{
+        return this.Products.find((obj) => obj.ID == id); 
+    }
 }
