@@ -1,9 +1,7 @@
 <!-- <link rel="stylesheet" href="../../../../node_modules/bootstrap/dist/css/bootstrap.css"> -->
 <br>
 <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
-    <div style="width: 200px; height: 200px;">
-        <img [src]="product?.image" class="object-fit-contain w-100 h-100">
-    </div>
+        <img [src]="product?.image">
     <div>
         <h5>{{product?.title}}</h5>
         <p>{{product?.price | currency :'L.E.'}}</p>

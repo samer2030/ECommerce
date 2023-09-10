@@ -1,11 +1,9 @@
 <!-- <link rel="stylesheet" href="../../../../node_modules/bootstrap/dist/css/bootstrap.css"> -->
 
-<a class="btn" [routerLink]="['/user/details',product?.id]">
-    <div>
-        <img [src]="product!.image | defaultImgURL" class="img-fluid" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{product?.title}}</h5>
-            <p class="card-text">{{product?.price | currency :'L.E.'}}</p>
-        </div>
+<div class="my-3" [routerLink]="['/user/details',product?.id]">
+    <img [src]="product!.image | defaultImgURL" class="card-img-top mx-auto" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{product?.title}}</h5>
+        <p class="card-text">{{product?.price | currency :'L.E.'}}</p>
     </div>
-</a>
+</div>
