@@ -5,10 +5,14 @@ import { ProdDetailsComponent } from "../Components/prod-details/prod-details.co
 import { MainComponent } from "../Components/mainComp/main.component";
 import { NotFoundComponent } from "../Components/not-found-comp/not-found-comp.component";
 import { UserLayoutComponent } from "../Components/user-layout/user-layout.component";
+import { LoginComponent } from "../Components/login/login.component";
+import { RegisterComponent } from "../Components/register/register.component";
 
 let routes: Routes = [
   { path: '', redirectTo: "user", pathMatch: "full" },
-  { path: 'foot', component: FooterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+
   {
     path: 'user', component: UserLayoutComponent, children: [
       { path: '', redirectTo: "main", pathMatch: "full" },

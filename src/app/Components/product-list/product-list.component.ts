@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ICategory } from 'src/app/Models/ICategory';
-import { Product } from 'src/app/Models/Product';
+import { IProduct } from 'src/app/Models/IProduct';
 import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
@@ -11,19 +10,17 @@ import { ProductService } from 'src/app/Services/product.service';
 export class ProductListComponent {
     title = "productComp";
 
-    Products: Product[];
-    Categories: ICategory[];
-    selectedCat: number = 0;
+    Products: any[];
 
     constructor(private ProdServ: ProductService) {
-        this.Products = this.ProdServ.Products
-        this.Categories = this.ProdServ.Categories
+        this.Products = []
     }
 
-    changeCat() {
-        this.Products = this.ProdServ.filterByCategoryID(this.selectedCat)
+    ngOnInit() {
+        this.ProdServ.getAll().subscribe((response) => {
+            this.Products = response
+            console.log(response)
+        })
     }
-
-
 
 }

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from 'src/app/Models/Product';
+import { Observable } from 'rxjs';
+import { IProduct } from 'src/app/Models/IProduct';
 
 import { ProductService } from 'src/app/Services/product.service';
 
@@ -10,14 +11,17 @@ import { ProductService } from 'src/app/Services/product.service';
   styleUrls: ['./prod-details.component.css']
 })
 export class ProdDetailsComponent {
-  product?: Product;
+  product?: IProduct;
   constructor(private ActiveRoute: ActivatedRoute, private ProdServ: ProductService) {
     this.ActiveRoute.params.subscribe({
       next: (parms) => {
-        this.product = ProdServ.getProductByID(parms['id']);
-        console.log(this.product?.ID)
+        ProdServ.getProductByID(parms['id']).subscribe((response) => {
+          this.product = response
+          console.log(response)
+        })
+        // console.log(this.product?.ID)
       }
     })
   }
-  
+
 }

@@ -1,7 +1,11 @@
-<div >
-    <img [src] = "product?.Img"  class = "img-fluid">
+<!-- <link rel="stylesheet" href="../../../../node_modules/bootstrap/dist/css/bootstrap.css"> -->
+<br>
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+    <div style="width: 200px; height: 200px;">
+        <img [src]="product?.image" class="object-fit-contain w-100 h-100">
+    </div>
     <div>
-        <h5 >{{product?.Name}}</h5>
-        <p >{{product?.Price | currency :'L.E.'}}</p>
+        <h5>{{product?.title}}</h5>
+        <p>{{product?.price | currency :'L.E.'}}</p>
     </div>
 </div>

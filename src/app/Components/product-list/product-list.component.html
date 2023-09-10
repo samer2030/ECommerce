@@ -1,13 +1,13 @@
 <!-- <link rel="stylesheet" href="../../../../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
 
 <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
-    <h3>
+    <!-- <h3>
         Select Category :
     </h3>  
     <select [(ngModel)]="selectedCat" (change)="changeCat()">
         <option [value]="item.categoryID" *ngFor="let item of Categories">{{item.categeoryName}}</option>
-    </select>
+    </select> -->
     <div class="row container-fluid row gap-3 justify-content-center">
-        <app-product class="card col-4" *ngFor="let item of Products" [product]="item"></app-product>
+        <app-product class="card col-3" *ngFor="let item of Products" [product]="item"></app-product>
     </div>
 </div>
