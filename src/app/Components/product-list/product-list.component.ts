@@ -19,7 +19,7 @@ export class ProductListComponent {
     ngOnInit() {
         this.ProdServ.getAll().subscribe((response) => {
             this.Products = response
-            console.log(response)
+            // console.log(response)
         })
     }
 

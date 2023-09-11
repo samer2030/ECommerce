@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { IProduct } from 'src/app/Models/IProduct';
-import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -9,4 +8,9 @@ import { ProductService } from 'src/app/Services/product.service';
 })
 export class ProductComponent {
   @Input() product?: IProduct;
+
+  addtoCart(id: number, prod: IProduct) {
+    console.log('added: ' + prod.id)
+    localStorage.setItem(id.toString(), prod.id.toString())
+  }
 }
