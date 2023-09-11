@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './router/router.module';
 import { ProductService } from './Services/product.service';
@@ -16,7 +17,6 @@ import { NotFoundComponent } from './Components/not-found-comp/not-found-comp.co
 import { ProdDetailsComponent } from './Components/prod-details/prod-details.component';
 import { UserLayoutComponent } from './Components/user-layout/user-layout.component';
 import { ProductComponent } from './Components/product/product.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { CartComponent } from './Components/cart/cart.component';
