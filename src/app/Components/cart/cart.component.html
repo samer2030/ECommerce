@@ -1,1 +1,6 @@
-<p>cart works!</p>
+<br>
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+    <div class="row container-fluid row gap-3 justify-content-center">
+        <app-product class="card col-lg-2 col-md-3 col-sm-6" *ngFor="let item of cart" [product]="item"></app-product>
+    </div>
+</div>

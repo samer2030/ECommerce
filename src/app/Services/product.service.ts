@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class ProductService {
     apiLink: string = 'https://fakestoreapi.com/products'
+    cartLocal: any[] = [];
+
 
     constructor(private http: HttpClient) { }
     getAll() {
@@ -15,4 +17,5 @@ export class ProductService {
     getProductByID(id: number): Observable<any> {
         return this.http.get<any>(`${this.apiLink}/${id}`)
     }
+
 }

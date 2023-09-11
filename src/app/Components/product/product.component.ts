@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { IProduct } from 'src/app/Models/IProduct';
+import { ProductListComponent } from '../product-list/product-list.component';
+import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -7,10 +9,14 @@ import { IProduct } from 'src/app/Models/IProduct';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
+  constructor(private prodServ: ProductService){
+
+  }
   @Input() product?: IProduct;
 
-  addtoCart(id: number, prod: IProduct) {
-    console.log('added: ' + prod.id)
-    localStorage.setItem(id.toString(), prod.id.toString())
+  addtoCart() {
+    console.log('added: ' + this.product?.title)
+    this.prodServ.cartLocal.push(this.product)
+    localStorage.setItem('cart', JSON.stringify(this.prodServ.cartLocal))
   }
 }

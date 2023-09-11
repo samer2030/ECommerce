@@ -12,6 +12,7 @@ export class ProductListComponent {
 
     Products: any[];
 
+
     constructor(private ProdServ: ProductService) {
         this.Products = []
     }
